@@ -24,8 +24,7 @@ function HomePage () {
     completedTodos,
     searchValue,
     handleNewSearch,
-    sincronize,
-    editTodo
+    sincronize
   } = useTodos()
 
   return (
@@ -52,7 +51,7 @@ function HomePage () {
             completed={todo.completed}
             onComplete={() => toggleCompleteTodo({ id: todo.id })}
             onDelete={() => deleteTodo({ id: todo.id })}
-            onEdit={() => editTodo({ id: todo.id, description: todo.description })}
+            id={todo.id}
           />)}
       >
 

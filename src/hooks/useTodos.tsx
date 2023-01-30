@@ -22,6 +22,8 @@ export const useTodos = () => {
     })
   }
 
+  const getTodo = (id: number) => todos.find(todo => todo.id === id)
+
   const completedTodos = todos.filter(todo => todo.completed).length
   const totalTodos = todos.length
 
@@ -49,15 +51,17 @@ export const useTodos = () => {
     saveTodos(newTodos)
   }
 
-  const editTodo = ({ id, description }: TodoType) => {
+  const editTodo = (id?: number, description?: string) => {
     const index = todos.findIndex(todo => todo.id === id)
     const newTodos = [...todos]
     console.log({ newTodos })
     newTodos[index].description = description
-    // saveTodos(newTodos)
+    saveTodos(newTodos)
   }
 
-  const addTodo = (text: string) => {
+  const submitTodo = (text: string) => { }
+
+  const addTodo = (text?: string) => {
     const newTodos = [...todos]
     newTodos.push({ completed: false, description: text, id: Date.now() })
     saveTodos(newTodos)
@@ -73,7 +77,7 @@ export const useTodos = () => {
     setTimeout(() => {
       setLoading(false)
       setSincronizedItem(true)
-    }, 2000)
+    }, 1200)
   }, [sincronizeItem])
 
   const providerValues: ContextType = {
@@ -90,7 +94,9 @@ export const useTodos = () => {
     toggleOpenModal,
     addTodo,
     sincronize,
-    editTodo
+    editTodo,
+    submitTodo,
+    getTodo
   }
 
   return (providerValues)

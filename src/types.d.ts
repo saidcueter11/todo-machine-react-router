@@ -8,6 +8,9 @@ export interface TodoType {
 }
 
 export interface ContextType {
+    labelForm?: string
+    submitText?: string
+    defaultTodoTextForm?: string
     totalTodos: number
     completedTodos: number
     searchValue: string
@@ -20,6 +23,8 @@ export interface ContextType {
     deleteTodo: (todo: TodoType) => void
     toggleOpenModal: (todo: boolean) => void
     addTodo: (todo: string) => void
-    editTodo: (todo: TodoType) => void
+    editTodo: (id?: number, text?: string) => void
+    submitTodo: (text: string) => void
+    getTodo: (id: number) => TodoType | undefined
     sincronize: (todo: TodoType[]) => void
 }

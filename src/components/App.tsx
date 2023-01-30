@@ -9,7 +9,7 @@ function App () {
       <HashRouter>
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/edit' element={<EditTodoPage />} />
+          <Route path='/edit/:id' element={<EditTodoPage />} />
           <Route path='/new' element={<NewTodoPage />} />
         </Routes>
       </HashRouter>

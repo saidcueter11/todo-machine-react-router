@@ -5,7 +5,7 @@ export const NewTodoPage = () => {
   const { addTodo } = useTodos()
   return (
     <div className='h-screen w-full p-4'>
-      <TodoForm addTodo={addTodo} />
+      <TodoForm submitTodo={(text) => addTodo(text)} labelForm='Add new Todo' submitText='Add' />
     </div>
   )
 }
