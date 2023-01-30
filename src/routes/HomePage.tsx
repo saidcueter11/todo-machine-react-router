@@ -3,8 +3,8 @@ import { TodoCounter } from '../components/TodoCounter'
 import { TodoItem } from '../components/TodoItem'
 import { TodoList } from '../components/TodoList'
 import { TodoSearch } from '../components/TodoSearch'
-import { Modal } from '../components/Modal'
-import { TodoForm } from '../components/TodoForm'
+// import { Modal } from '../components/Modal'
+// import { TodoForm } from '../components/TodoForm'
 import { Loading } from '../components/Loading'
 import { TodoHeader } from '../components/TodoHeader'
 import { useTodos } from '../hooks/useTodos'
@@ -19,14 +19,11 @@ function HomePage () {
     searchedTodos,
     toggleCompleteTodo,
     deleteTodo,
-    openModal,
-    toggleOpenModal,
     loading,
     totalTodos,
     completedTodos,
     searchValue,
     handleNewSearch,
-    addTodo,
     sincronize,
     editTodo
   } = useTodos()
@@ -61,15 +58,7 @@ function HomePage () {
 
       </TodoList>
 
-      <>
-        {openModal && (
-          <Modal>
-            <TodoForm addTodo={addTodo} toggleOpenModal={toggleOpenModal} />
-          </Modal>
-        )}
-      </>
-
-      <CreateTodoButton toggleOpenModal={toggleOpenModal} openModal={openModal} />
+      <CreateTodoButton />
       <ChangeAlert sincronize={sincronize} />
       <LimitTodos totalTodos={totalTodos} />
     </div>
