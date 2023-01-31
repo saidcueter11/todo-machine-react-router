@@ -1,5 +1,5 @@
 {
-  "name": "introductionreact",
+  "name": "todo-machine-react-router",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -38,5 +38,6 @@
       "standard-jsx",
       "standard-react"
     ]
-  }
+  },
+  "homepage": "https://saidcueter11.github.io/todo-machine-react-router"
 }
